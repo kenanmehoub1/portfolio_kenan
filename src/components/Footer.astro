@@ -10,20 +10,47 @@ const currentYear = new Date().getFullYear();
 <footer
   class="w-full border-t border-neutral/20 px-5 pt-5 pb-8 text-center text-white"
 >
-  <ul class="mb-5 flex flex-wrap justify-center gap-x-5 text-xs">
-    {
-      socialLinks.map(({ text, href }) => (
-        <li>
-          <a
-            href={href}
-            target="_blank"
-            class="inline-block px-4 py-3 after:relative after:-bottom-1 after:content-[url(/external.svg)] hover:text-primary"
-          >
-            {text}
-          </a>
-        </li>
-      ))
-    }
+   <ul class="mb-5 flex flex-wrap justify-center gap-x-5 text-xs">
+    <li>
+      <a
+        href="https://www.facebook.com/kenan.mehoub"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block px-4 py-3 after:relative after:-bottom-1 after:content-[url(/external.svg)] hover:text-primary"
+      >
+        Facebook
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://t.me/kenan_mehoub"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block px-4 py-3 after:relative after:-bottom-1 after:content-[url(/external.svg)] hover:text-primary"
+      >
+        Telegram
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://wa.me/963998187380"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block px-4 py-3 after:relative after:-bottom-1 after:content-[url(/external.svg)] hover:text-primary"
+      >
+        WhatsApp
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://www.instagram.com/kenan.mehoub"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block px-4 py-3 after:relative after:-bottom-1 after:content-[url(/external.svg)] hover:text-primary"
+      >
+        Instagram
+      </a>
+    </li>
   </ul>
   <p class="text-xs">
    <span class="text-neutral"
