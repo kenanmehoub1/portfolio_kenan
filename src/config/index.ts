@@ -2,8 +2,8 @@ import type { SiteConfig, SiteContent } from "../types";
 
 
 export const SITE_CONFIG: SiteConfig = {
-  title: "Alejandro Múnez — Mobile & Web Developer",
-  author: "Alejandro Múnez Cuntez",
+  title: "Kenan Mehoub — PHP & Laravel Developer",
+  author: "Kenan Mehoub",
   description:
     "Software Engineer based in San Francisco, USA. I specialize in UI design, web and mobile application development and maintenance.",
   lang: "en",
@@ -88,9 +88,7 @@ export const SITE_CONTENT: SiteContent = {
   ],
   about: {
     description: `
-      Hi, I’m Alejandro Múnez, a passionate Mobile and Web Developer with a knack for crafting seamless digital experiences. With a strong background in both Android and iOS development, as well as front-end web technologies, I thrive in the intersection where creativity meets technology.
-
-      Over the years, I’ve honed my skills in building robust, user-friendly applications that not only meet the needs of users but also push the boundaries of what’s possible. My projects range from innovative mobile applications to responsive web designs, all with a focus on performance, security, and scalability.
+     
     `,
     image: "/alejandro-big.jpg",
   },
