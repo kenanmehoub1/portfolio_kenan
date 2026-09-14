@@ -1,22 +1,27 @@
-import { defineConfig, fontProviders } from 'astro/config';
+import { defineConfig, fontProviders } from "astro/config";
 
 export default defineConfig({
   fonts: [
     {
-      name: 'Sora',
-      cssVariable: '--font-sora',
+      name: "Sora",
+      cssVariable: "--font-sora",
       provider: fontProviders.google(),
       weights: [400, 500, 600, 700],
-      styles: ['normal'],
-      subsets: ['latin'],
+      styles: ["normal"],
+      subsets: ["latin"],
+      fallbacks: ["sans-serif"],
+      display: "swap",
     },
+
     {
-      name: 'Space Grotesk',
-      cssVariable: '--font-space-grotesk',
+      name: "Space Grotesk",
+      cssVariable: "--font-space-grotesk",
       provider: fontProviders.google(),
       weights: [400, 500, 600, 700],
-      styles: ['normal'],
-      subsets: ['latin'],
+      styles: ["normal"],
+      subsets: ["latin"],
+      fallbacks: ["sans-serif"],
+      display: "swap",
     },
   ],
 });
