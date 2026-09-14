@@ -5,25 +5,56 @@ type Props = HeroProps;
 const { name, specialty, summary, email } = Astro.props;
 ---
 
-<section class="py-24 md:py-32" id="#hero">
+<section class="relative py-24 md:py-32" id="hero">
+  <!-- خلفية زخرفية -->
+  <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+    <div class="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-primary/5 blur-3xl"></div>
+    <div class="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-accent/5 blur-3xl"></div>
+  </div>
+
+  <div class="reveal">
+    <span class="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xs font-medium tracking-wide text-primary uppercase">
+      متاح للعمل الحر
+    </span>
+  </div>
+
   <h1
-    class="mb-1.5 font-serif text-7xl font-bold tracking-tightest text-black sm:text-8xl md:mb-0 md:text-9xl"
+    class="reveal reveal-delay-1 mb-2 font-serif text-6xl font-bold tracking-tighter text-black sm:text-7xl md:text-8xl lg:text-9xl"
   >
-    Kenan Mehoub
+    Kenan
+    <span class="block bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+      Mehoub
+    </span>
   </h1>
+
   <p
-    class="mb-9 font-serif text-4xl leading-11.5 font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl"
+    class="reveal reveal-delay-2 mb-8 font-serif text-3xl leading-tight font-semibold tracking-tight text-primary sm:text-4xl md:text-5xl"
   >
-    PHP & Laravel Developer | Web Designer
-  </p>
-  <p class="mb-16 text-base font-normal text-neutral md:text-lg">
-    Full-Stack Developer specializing in PHP & Laravel. I craft
-high-performance web applications, custom management systems,
-control dashboards, and conversion-focused landing pages.
+    PHP & Laravel Developer
+    <span class="block text-neutral-light">| Web Designer</span>
   </p>
 
-  <a
-    class="inline-block rounded-full bg-primary px-8 py-5 text-sm leading-5 font-medium text-[#fff]"
-    href="https://wa.me/963998187380">Let's Build Something Great →</a
-  >
+  <p class="reveal reveal-delay-3 mb-12 max-w-xl text-base leading-relaxed font-normal text-neutral md:text-lg">
+    Full-Stack Developer specializing in PHP & Laravel. I craft
+    high-performance web applications, custom management systems,
+    control dashboards, and conversion-focused landing pages.
+  </p>
+
+  <div class="reveal reveal-delay-4 flex flex-wrap items-center gap-4">
+    <a
+      class="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-primary px-8 py-4 text-sm font-medium text-white shadow-lg shadow-primary/25 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/30"
+      href="https://wa.me/963998187380"
+    >
+      <span class="relative z-10">Let's Build Something Great</span>
+      <span class="relative z-10 transition-transform duration-300 group-hover:translate-x-1">→</span>
+      <span class="absolute inset-0 -translate-x-full bg-gradient-to-r from-primary-dark to-primary transition-transform duration-500 group-hover:translate-x-0"></span>
+    </a>
+
+    <a
+      href="#projects"
+      class="inline-flex items-center gap-2 rounded-full border border-neutral/20 px-8 py-4 text-sm font-medium text-black transition-all duration-300 hover:border-primary hover:text-primary"
+    >
+      View Projects
+    </a>
+  </div>
 </section>

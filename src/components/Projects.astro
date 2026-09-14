@@ -12,35 +12,42 @@ const { projects } = Astro.props;
 
 <Section text="Featured Projects" href="projects">
   <!-- Project 1 -->
-  <div class="mb-12 rounded-2xl border border-neutral/20 bg-black md:sticky md:top-[98px]">
-    <div class="bg-difu relative z-1 grid w-full rounded-2xl bg-[#1c232d]/85 before:absolute before:inset-0 before:z-[-1] before:rounded-2xl before:bg-[url(/raja.png)] before:bg-size-[128px] before:bg-repeat before:opacity-5 before:content-[''] sm:grid-cols-2 md:h-96">
-      <div class="flex flex-col px-6 py-12">
-        <h3 class="mb-5 font-serif text-3xl font-medium text-primary">
+  <div class="reveal group mb-12 md:sticky md:top-[98px]">
+    <div class="relative z-10 grid w-full overflow-hidden rounded-2xl border border-neutral/10 bg-white shadow-sm transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 sm:grid-cols-2 md:h-96">
+      <!-- خلفية زخرفية -->
+      <div class="pointer-events-none absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+
+      <div class="relative flex flex-col justify-center px-8 py-12">
+        <span class="mb-4 inline-flex w-fit items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+          <span class="h-1.5 w-1.5 rounded-full bg-primary"></span>
+          Web Application
+        </span>
+        <h3 class="mb-4 font-serif text-3xl font-semibold text-black transition-colors duration-300 group-hover:text-primary">
           Zenfine for Property Care
         </h3>
-        <p class="text-base text-neutral">
+        <p class="mb-4 text-base leading-relaxed text-neutral">
           A complete website for a UAE-based cleaning services company,
           featuring a full invoice management system and task tracking
           dashboard to streamline daily operations and client management.
         </p>
-        <p class="mt-4 text-base text-neutral">
-          <span class="font-medium text-black">Technologies :</span>
+        <p class="mb-6 text-sm text-neutral">
+          <span class="font-semibold text-black">Technologies :</span>
           PHP · Laravel · Blade
         </p>
-        <div class="mt-6 flex gap-5 text-primary">
-          <a
-            href="https://zenfine1.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="after:relative after:-bottom-1.25 after:content-[url(/external.svg)] hover:underline"
-          >
-            Preview
-          </a>
-        </div>
+        <a
+          href="https://zenfine1.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex w-fit items-center gap-2 rounded-full bg-primary/10 px-5 py-2.5 text-sm font-medium text-primary transition-all duration-300 hover:bg-primary hover:text-white"
+        >
+          Preview
+          <span class="transition-transform duration-300 group-hover:translate-x-0.5">→</span>
+        </a>
       </div>
-      <div class="flex items-center justify-center overflow-hidden p-4">
+
+      <div class="relative flex items-center justify-center overflow-hidden bg-surface p-6">
         <Image
-          class="h-auto w-full rounded-ss-xl rounded-ee-2xl object-contain sm:h-full"
+          class="h-auto w-full rounded-xl object-contain shadow-lg transition-transform duration-500 group-hover:scale-[1.03]"
           src={projects[0].image}
           alt="Zenfine for Property Care"
           width="736"
@@ -51,35 +58,41 @@ const { projects } = Astro.props;
   </div>
 
   <!-- Project 2 -->
-  <div class="mb-12 rounded-2xl border border-neutral/20 bg-black md:sticky md:top-[138px]">
-    <div class="bg-difu relative z-1 grid w-full rounded-2xl bg-[#1c232d]/85 before:absolute before:inset-0 before:z-[-1] before:rounded-2xl before:bg-[url(/raja.png)] before:bg-size-[128px] before:bg-repeat before:opacity-5 before:content-[''] sm:grid-cols-2 md:h-96">
-      <div class="flex flex-col px-6 py-12">
-        <h3 class="mb-5 font-serif text-3xl font-medium text-primary">
+  <div class="reveal group mb-12 md:sticky md:top-[138px]">
+    <div class="relative z-10 grid w-full overflow-hidden rounded-2xl border border-neutral/10 bg-white shadow-sm transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 sm:grid-cols-2 md:h-96">
+      <div class="pointer-events-none absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+
+      <div class="relative flex flex-col justify-center px-8 py-12">
+        <span class="mb-4 inline-flex w-fit items-center gap-2 rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
+          <span class="h-1.5 w-1.5 rounded-full bg-accent"></span>
+          Real Estate Platform
+        </span>
+        <h3 class="mb-4 font-serif text-3xl font-semibold text-black transition-colors duration-300 group-hover:text-primary">
           Real Estate Platform
         </h3>
-        <p class="text-base text-neutral">
+        <p class="mb-4 text-base leading-relaxed text-neutral">
           A full real estate platform with property listings, advanced
           filtering, and a powerful custom admin dashboard for complete
           content and property management.
         </p>
-        <p class="mt-4 text-base text-neutral">
-          <span class="font-medium text-black">Technologies :</span>
+        <p class="mb-6 text-sm text-neutral">
+          <span class="font-semibold text-black">Technologies :</span>
           PHP · Laravel · Blade · Filament
         </p>
-        <div class="mt-6 flex gap-5 text-primary">
-          <a
-            href="https://violet-chamois-504658.hostingersite.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="after:relative after:-bottom-1.25 after:content-[url(/external.svg)] hover:underline"
-          >
-            Preview
-          </a>
-        </div>
+        <a
+          href="https://violet-chamois-504658.hostingersite.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex w-fit items-center gap-2 rounded-full bg-primary/10 px-5 py-2.5 text-sm font-medium text-primary transition-all duration-300 hover:bg-primary hover:text-white"
+        >
+          Preview
+          <span class="transition-transform duration-300 group-hover:translate-x-0.5">→</span>
+        </a>
       </div>
-      <div class="flex items-center justify-center overflow-hidden p-4">
+
+      <div class="relative flex items-center justify-center overflow-hidden bg-surface p-6">
         <Image
-          class="h-auto w-full rounded-ss-xl rounded-ee-2xl object-contain sm:h-full"
+          class="h-auto w-full rounded-xl object-contain shadow-lg transition-transform duration-500 group-hover:scale-[1.03]"
           src={projects[1].image}
           alt="Real Estate Platform"
           width="736"
@@ -89,3 +102,21 @@ const { projects } = Astro.props;
     </div>
   </div>
 </Section>
+
+<script>
+  // تأثير الظهور عند التمرير للمشاريع
+  const projectReveals = document.querySelectorAll('.reveal');
+  
+  const projectObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -80px 0px' }
+  );
+
+  projectReveals.forEach((el) => projectObserver.observe(el));
+</script>

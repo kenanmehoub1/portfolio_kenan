@@ -1,25 +1,29 @@
-// @ts-check
-import { defineConfig } from "astro/config";
-import tailwindcss from "@tailwindcss/vite";
-import { fontProviders } from "astro/config";
+// في astro.config.mjs
+import { defineConfig } from 'astro/config';
+import { fontsource } from '@astrojs/font';
 
-// https://astro.build/config
 export default defineConfig({
-  fonts: [
-    {
-      provider: fontProviders.fontsource(),
-      name: "Gabarito",
-      cssVariable: "--font-gabarito",
-      fallbacks: ["ui-serif", "serif"],
-    },
-    {
-      provider: fontProviders.fontsource(),
-      name: "Be Vietnam Pro",
-      cssVariable: "--font-be-vietnam-pro",
-      fallbacks: ["system-ui", "sans-serif"],
-    },
+  integrations: [
+    fontsource({
+      // ...
+    })
   ],
-  vite: {
-    plugins: [tailwindcss()],
+  experimental: {
+    fonts: [
+      {
+        provider: 'google',
+        name: 'Sora',
+        cssVariable: '--font-sora',
+        weights: [400, 500, 600, 700],
+        subsets: ['latin'],
+      },
+      {
+        provider: 'google',
+        name: 'Space Grotesk',
+        cssVariable: '--font-space-grotesk',
+        weights: [400, 500, 600, 700],
+        subsets: ['latin'],
+      },
+    ],
   },
 });

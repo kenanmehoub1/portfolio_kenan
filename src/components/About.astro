@@ -9,27 +9,35 @@ const { description, image, name } = Astro.props;
 ---
 
 <Section text="About Me" href="about">
-  <div class="flex flex-col items-center gap-12 md:flex-row md:gap-8">
-    <p class="w-auto text-base text-neutral md:pr-5"> Hi, I'm Kenan Mehoub, a passionate Full-Stack Web Developer specializing
+  <div class="reveal flex flex-col items-center gap-12 md:flex-row md:gap-10">
+    <p class="w-auto text-base leading-relaxed text-neutral md:pr-5">
+      Hi, I'm <span class="font-semibold text-black">Kenan Mehoub</span>, a passionate Full-Stack Web Developer specializing
       in PHP and Laravel. I design and build high-performance web applications,
       custom management systems, control dashboards, and conversion-focused
-      landing pages that turn ideas into real digital products. Over the years,
-      I've worked on remote and freelance projects ranging from invoice
+      landing pages that turn ideas into real digital products.
+      <br /><br />
+      Over the years, I've worked on remote and freelance projects ranging from invoice
       management systems and task tracking dashboards to a full real estate
       platform with a powerful Filament admin panel. I also build secure
       authentication flows using Laravel Sanctum and RESTful APIs, and I
       collaborate smoothly with front-end teams using React, Next.js, and
-      Tailwind CSS. My focus is always on clean code, performance, security,
-      and scalability — delivering solutions that are both reliable and
-      user-friendly..</p>
-    <div class="h-80 w-64 shrink-0 rotate-[5deg] bg-black p-4 md:rotate-[7deg]">
-      <Image
-        class="object-cover"
-        src={image}
-        width="260"
-        height="260"
-        alt={name}
-      />
+      Tailwind CSS.
+      <br /><br />
+      My focus is always on <span class="font-medium text-primary">clean code, performance, security,
+      and scalability</span> — delivering solutions that are both reliable and
+      user-friendly.
+    </p>
+    <div class="group relative h-80 w-64 shrink-0">
+      <div class="absolute inset-0 rotate-[5deg] rounded-2xl bg-gradient-to-br from-primary to-accent transition-transform duration-500 group-hover:rotate-[8deg] group-hover:scale-105"></div>
+      <div class="absolute inset-0 rotate-[3deg] rounded-2xl bg-black transition-transform duration-500 group-hover:rotate-[5deg]">
+        <Image
+          class="h-full w-full rounded-2xl object-cover"
+          src={image}
+          width="260"
+          height="260"
+          alt={name}
+        />
+      </div>
     </div>
   </div>
 </Section>

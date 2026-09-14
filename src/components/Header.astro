@@ -9,11 +9,11 @@ const { siteLogo, navLinks } = Astro.props;
 ---
 
 <header
-  class="sticky top-0 z-50 mx-auto flex max-w-5xl animate-slide-in justify-between bg-white px-5 py-6"
+  class="sticky top-0 z-50 mx-auto flex max-w-5xl animate-slide-in items-center justify-between border-b border-neutral/5 bg-white/80 px-5 py-4 backdrop-blur-lg"
 >
-  <a href="/" aria-label="Home link">
+  <a href="/" aria-label="Home link" class="transition-transform duration-300 hover:scale-105">
     <Image
-      class="rounded-full"
+      class="rounded-full ring-2 ring-primary/20"
       src={siteLogo}
       width="45"
       height="45"
@@ -25,7 +25,7 @@ const { siteLogo, navLinks } = Astro.props;
   <button
     type="button"
     id="menu-button"
-    class="px-1.5 text-neutral sm:hidden"
+    class="rounded-lg p-2 text-neutral transition-colors hover:bg-primary/10 hover:text-primary sm:hidden"
     aria-expanded="false"
     aria-controls="main-menu"
   >
@@ -33,15 +33,15 @@ const { siteLogo, navLinks } = Astro.props;
   </button>
 
   <nav
-    class="absolute top-20 right-5 hidden rounded-xl border border-neutral/40 bg-white px-4 py-5 text-neutral sm:static sm:block sm:border-0 sm:bg-transparent sm:p-0"
+    class="absolute top-20 right-5 hidden rounded-2xl border border-neutral/10 bg-white/95 px-2 py-3 text-neutral shadow-xl backdrop-blur-lg sm:static sm:block sm:border-0 sm:bg-transparent sm:p-0 sm:shadow-none sm:backdrop-blur-none"
     id="main-menu"
   >
-    <ul class="gap-2 sm:flex">
+    <ul class="gap-1 sm:flex">
       {
         navLinks.map((link) => (
           <li class="relative">
             <a
-              class={`nav-item relative block p-2 text-sm font-medium transition-all duration-500 after:absolute after:bottom-0 after:left-2/4 after:h-2 after:w-1 after:-translate-x-2/4 after:text-primary after:opacity-0 after:content-['•'] hover:text-black`}
+              class={`nav-item relative block rounded-lg px-4 py-2 text-sm font-medium transition-all duration-300 hover:bg-primary/5 hover:text-primary`}
               href={link.href}
             >
               {link.text}
@@ -70,29 +70,29 @@ const { siteLogo, navLinks } = Astro.props;
     item?.addEventListener("click", toggleMenu);
   });
 
-  // Update navigation based on scroll position with Intersection Observer
+  // Update navigation based on scroll position
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
-            if (item.getAttribute("href") === `#${entry.target.id}`) {
-              item.classList.add("text-black", "md:after:opacity-100");
+            const href = item.getAttribute("href");
+            if (href === `#${entry.target.id}` || href === `/#${entry.target.id}`) {
+              item.classList.add("bg-primary/10", "text-primary");
             } else {
-              item.classList.remove("text-black", "md:after:opacity-100");
+              item.classList.remove("bg-primary/10", "text-primary");
             }
           });
         }
       });
     },
-    { threshold: 0.5 },
+    { threshold: 0.3 },
   );
 
   document.querySelectorAll("section").forEach((section) => {
     observer.observe(section);
   });
 
-  // Cleanup observer
   document.onvisibilitychange = () => {
     if (document.visibilityState === "hidden") {
       observer.disconnect();
@@ -103,10 +103,3 @@ const { siteLogo, navLinks } = Astro.props;
     }
   };
 </script>
-
-<style>
-  header {
-    animation-timeline: scroll();
-    animation-range: 0 650px;
-  }
-</style>
