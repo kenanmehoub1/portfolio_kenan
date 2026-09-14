@@ -1,29 +1,22 @@
-// في astro.config.mjs
-import { defineConfig } from 'astro/config';
-import { fontsource } from '@astrojs/font';
+import { defineConfig, fontProviders } from 'astro/config';
 
 export default defineConfig({
-  integrations: [
-    fontsource({
-      // ...
-    })
+  fonts: [
+    {
+      name: 'Sora',
+      cssVariable: '--font-sora',
+      provider: fontProviders.google(),
+      weights: [400, 500, 600, 700],
+      styles: ['normal'],
+      subsets: ['latin'],
+    },
+    {
+      name: 'Space Grotesk',
+      cssVariable: '--font-space-grotesk',
+      provider: fontProviders.google(),
+      weights: [400, 500, 600, 700],
+      styles: ['normal'],
+      subsets: ['latin'],
+    },
   ],
-  experimental: {
-    fonts: [
-      {
-        provider: 'google',
-        name: 'Sora',
-        cssVariable: '--font-sora',
-        weights: [400, 500, 600, 700],
-        subsets: ['latin'],
-      },
-      {
-        provider: 'google',
-        name: 'Space Grotesk',
-        cssVariable: '--font-space-grotesk',
-        weights: [400, 500, 600, 700],
-        subsets: ['latin'],
-      },
-    ],
-  },
 });
